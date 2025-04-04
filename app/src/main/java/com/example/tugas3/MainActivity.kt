@@ -1,15 +1,13 @@
 package com.example.tugas3
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.tugas3.databinding.ActivityMainBinding
-import com.example.tugas3.databinding.ActivityMainBinding.*
-
+import com.example.tugas3.databinding.ActivityMainBinding.inflate
 
 
 class MainActivity : AppCompatActivity() {

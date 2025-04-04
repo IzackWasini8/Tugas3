@@ -25,5 +25,9 @@ class Home : AppCompatActivity() {
         binding.btnTgs3.setOnClickListener{
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://google.com")))
         }
+        binding.btnTgs4.setOnClickListener{
+            val intentListActivity = Intent(this, ListActivity::class.java)
+            startActivity(intentListActivity)
+        }
     }
 }
