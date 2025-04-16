@@ -7,26 +7,38 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MyAdapter(private val namaList: ArrayList<ItemData>):
-    RecyclerView.Adapter<MyAdapter.MyViewHolder>(){
-    class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val gambar : ImageView = itemView.findViewById(R.id.imageView)
-        val nama : TextView = itemView.findViewById(R.id.nama)
+class MyAdapter(private val makananList: ArrayList<ItemData>):
+    RecyclerView.Adapter<MyAdapter.ImageViewHolder>(){
+
+
+    var onItemClick : ((ItemData) -> Unit)? = null
+
+    class ImageViewHolder(itemView : View):RecyclerView.ViewHolder(itemView) {
+        val imageView : ImageView = itemView.findViewById(R.id.imageView)
+        val imageTitle : TextView = itemView.findViewById(R.id.nama)
         val asal : TextView = itemView.findViewById(R.id.asal)
+
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemData = LayoutInflater.from(parent.context).inflate(R.layout.item_data,parent,false)
-        return MyViewHolder(itemData)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_data, parent, false)
+        return ImageViewHolder(view)
     }
 
-    override fun getItemCount(): Int = namaList.size
+    override fun getItemCount(): Int {
+        return makananList.size
+    }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentItem = namaList[position]
-        holder.gambar.setImageResource(currentItem.gambar)
-        holder.asal.text = namaList[position].asal
-        holder.nama.text = namaList[position].nama
+    override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
+        val makanan = makananList[position]
+        holder.imageView.setImageResource(makanan.imageSource)
+        holder.imageTitle.text = makanan.imageTitle
+        holder.asal.text = makanan.asal
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(makanan)
+
+        }
     }
 
 }
