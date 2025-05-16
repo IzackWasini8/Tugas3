@@ -1,5 +1,6 @@
 package com.example.tugas3
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
@@ -7,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,12 +26,28 @@ class DetailActivity : AppCompatActivity() {
             textView.text = makanan.imageTitle
             textView1.text = makanan.imageDesc
 
+            val bottNavigation = findViewById<BottomNavigationView>(R.id.bottNav)
+            bottNavigation.setOnNavigationItemSelectedListener { menuItem ->
+                when (menuItem.itemId) {
+                    R.id.navHome -> {
+                        val intent = Intent(this, ListActivity::class.java)
+                        startActivity(intent)
+                        true
+                    }
+
+                    else -> false
+                }
+
+            }
+
+
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+
         }
     }
 }

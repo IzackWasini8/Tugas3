@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "282528085888",
+    "project_id": "mobilecomputing-a8f3d",
+    "storage_bucket": "mobilecomputing-a8f3d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282528085888:android:c621a86fe71b54c0b87365",
+        "android_client_info": {
+          "package_name": "com.example.tugas3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-aeDClnKGtROvnNxHXm91_IrMD0ZVazQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

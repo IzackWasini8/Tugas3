@@ -13,23 +13,32 @@
         android:orientation="vertical"
         android:padding="30dp">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LOGIN"
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:src="@drawable/lg"
+            android:contentDescription="Logo"
             android:layout_marginTop="50dp"
-            android:textSize="35sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_gravity="center"/>
+            tools:srcCompat="@tools:sample/avatars" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="LOGIN"-->
+<!--            android:layout_marginTop="50dp"-->
+<!--            android:textSize="35sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_gravity="center"/>-->
 
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="30dp"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
@@ -37,12 +46,12 @@
             tools:ignore="VisualLintTextFieldSize" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/edtpass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_gravity="center"
-            android:hint="Password"
+            android:hint="Kata sandi"
             android:inputType="textPassword"
             android:minHeight="48dp"
             tools:ignore="VisualLintTextFieldSize" />
@@ -52,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Lupa Password ?" />
+            android:text="Lupa kata sandi ?" />
 
         <Button
             android:id="@+id/bt_login"
@@ -65,7 +74,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
@@ -90,10 +99,7 @@
                 android:textSize="14dp"
                 android:layout_gravity="right"/>
 
-
-
         </LinearLayout>
-
 
     </LinearLayout>
 
